@@ -1,0 +1,243 @@
+@import "./theme.less";
+@import "./animate.less";
+
+a{
+  color: @colorSuccess;
+}
+.mask{
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.title{
+  font-size: .55rem;
+  text-align: center;
+  padding: .3rem 0;
+}
+.tip{
+  color: @color777;
+  font-size: .4rem;
+  padding: .1rem 0;
+  .iconfont{
+    color: @colorBBB;
+  }
+  .radio{
+    color: @colorFFF;
+  }
+}
+
+.delete{
+  width: .5rem;
+  height: .5rem;
+  font-size: .35rem;
+  border-radius: 50%;
+  line-height: .5rem;
+  color: @colorFFF;
+  background: @colorCCC;
+  text-align: center;
+  transform: scale(0, 0);
+  transition: transform .2s, opacity .2s;
+  &.type-border{
+    background: rgba(0,0,0,.5);
+    border: 1px solid @colorFFF;
+  }
+  &.active{
+    transform: scale(1, 1);
+  }
+  &:hover{
+    opacity: .8;
+  }
+}
+.button{
+  text-align: center;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 5px;
+  transition: opacity .2s;
+  &:hover{
+    opacity: .8;
+  }
+  &.btn-small{
+    display: inline-block;
+    line-height: .9rem;
+    height: .9rem;
+    padding: 0 .4rem;
+    font-size: .4rem;
+    border-radius: 3px;
+  }
+  &.btn-success{
+    color: @colorFFF;
+    background: @colorSuccess;
+  }
+  &.btn-disable{
+    color: @colorFontNormal;
+    background: @colorDisable;
+  }
+  &.btn-error{
+    color: @colorFFF;
+    background: @colorError;
+  }
+  &.btn-normal{
+    color: @color000;
+    border: 1px solid @colorBorder;
+  }
+  &.btn-black{
+    color: #fff;
+    background: @colorBlack;
+  }
+  &.btn-black-opa{
+    color: #fff;
+    background: rgba(0,0,0,.7);
+  }
+  &.btn-border{
+    border: 1px solid @colorBorder;
+  }
+}
+
+.radio{
+  width: .46rem;
+  height: .46rem;
+  font-size: .35rem;
+  line-height: .46rem;
+  color: @colorFFF;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: background .2s, opacity .2s;
+  &:hover{
+    opacity: .8;
+  }
+  &.icon-success{
+    background: @colorSuccess;
+  }
+  &.icon-null{
+    border-color: @colorBorder;
+  }
+}
+
+.divider{
+  display: flex;
+  font-size: .4rem;
+  color: @color777;
+  justify-content: center;
+  align-items: center;
+  &::before{
+    content:'';
+    flex:1;
+    height: 1px;
+    background: @colorBorder;
+    margin-right: .3rem;
+  }
+  &::after{
+    content:'';
+    flex:1;
+    height: 1px;
+    background: @colorBorder;
+    margin-left: .3rem;
+  }
+}
+
+.icon-loading{
+  position: relative;
+  display: block;
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgPgogIDxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMTAwdjEwMEgweiIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgMSkiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMzApIi8+CiAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LCAuMDkpIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDMwIDEwNS45OCA2NSkiLz4KICA8cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsIC4xOCkiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoNjAgNzUuOTggNjUpIi8+CiAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LCAuMjcpIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDkwIDY1IDY1KSIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgLjM2KSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAgNTguNjYgNjUpIi8+CiAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LCAuNDUpIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE1MCA1NC4wMiA2NSkiLz4KICA8cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsIC41NCkiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDUwIDY1KSIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgLjYzKSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtMTUwIDQ1Ljk4IDY1KSIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgLjcyKSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtMTIwIDQxLjM0IDY1KSIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgLjgxKSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMzUgNjUpIi8+CiAgPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LCAuOSkiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTYwIDI0LjAyIDY1KSIvPgogIDxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwgMSkiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTMwIC01Ljk4IDY1KSIvPgo8L3N2Zz4KCg==) no-repeat;
+  background-size: 100% 100%;
+}
+
+.success{
+  color: @colorSuccess;
+}
+.warning{
+  color: @colorWorning;
+}
+.error{
+  color: @colorError;
+}
+.disable{
+  color: @colorBBB;
+}
+.bar{
+  height: .4rem;
+  width: 100%;
+}
+
+.badge{
+  font-size: 12px;
+  line-height: 14px;
+  padding: 2px 5px;
+  border-radius: .3rem;
+  font-style: normal;
+  color: @colorFFF;
+  background: @colorError;
+  &.small{
+    width: 0;
+    height: 0;
+    padding: .12rem;
+    font-size: 0;
+  }
+}
+
+
+.bg-fff{
+  background: @colorFFF;
+}
+.col-black{
+  color: @color000;
+}
+.top-border{
+  border-top: 1px solid @colorBorder;
+}
+.bottom-border{
+  border-bottom: 1px solid @colorBorder;
+}
+
+.tag{
+  display: inline-block;
+  font-size: 12px;
+  line-height: 13px;
+  font-style: normal;
+  color: @colorFFF;
+  border-radius: 2px;
+  padding: 2px 3px;
+  padding: 0 .2rem;
+  margin-right: .1rem;
+  .iconfont{
+    font-size: .35rem;
+  }
+}
+input[type="checkbox"]{
+  width:0;
+  height: .6rem;
+  margin-right: .7rem;
+  font-size: 0;
+}
+input[type="checkbox"]::before{
+  content:'√';
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  font-size: .4rem;
+  line-height: .65rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid @colorBorder;
+  color: transparent;
+}
+input[type="checkbox"]:checked::before{
+  border-color: @colorSuccess;
+  background: @colorSuccess;
+  color: @colorFFF;
+}
+input[type="checkbox"]:checked + *{
+  color: @colorSuccess;
+}
